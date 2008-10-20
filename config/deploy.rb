@@ -75,13 +75,11 @@ namespace :init do
     database_configuration = %(
 —
 login: &login
-  adapter: mysql
+  adapter: sqlite3
   encoding: utf8
-  database: #{application}_production
+  database: db/#{application}_production
   host: localhost
-  username: #{db_user}
-  password: #{db_pass}
-  socket: /var/run/mysqld/mysqld.sock
+  timeout: 5000
 
 production:
   <<: *login
