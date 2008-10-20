@@ -1,0 +1,15 @@
+one:
+  date: 2008-07-09
+  purpose: MyString
+  revenue: 9.99
+  expenditure: 9.99
+  cash_book_id: 1
+  user_id: 1
+
+two:
+  date: 2008-07-09
+  purpose: MyString
+  revenue: 9.99
+  expenditure: 9.99
+  cash_book_id: 1
+  user_id: 1

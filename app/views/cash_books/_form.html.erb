@@ -1,0 +1,20 @@
+<% form_for @cash_book do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+	<% if current_user == @cash_book.owner -%>
+	<p>
+		<%= f.label :user_ids, 'Benutzerrechte' %><br />
+		<% for user in User.find(:all) %>
+		<div>
+		<% if user.id != @cash_book.owner_id -%>
+			  <%= check_box_tag "cash_book[user_ids][]", user.id, @cash_book.users.include?(user) %>
+			  <%= user.login %>
+		<% end -%>
+		</div>
+		<% end %>
+		</p>
+	<% end -%>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

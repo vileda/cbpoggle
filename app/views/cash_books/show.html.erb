@@ -1,0 +1,48 @@
+<% title "Kassenbuch "+@cash_book.name %>
+<% set_locale 'de' %>
+<% content_for(:sub_menu) do %>
+	Hier können Sie neue Posten hinzufügen und einen Bericht erstellen
+<% end %>
+<br />
+<div class="subc" id="monthbar">
+	Bericht für: <%= render :partial => 'month_bar' %>
+	<%= link_to "Alle Einträge anzeigen", entries_path %>
+</div>
+<br />
+<hr />
+<br />
+<div class="subc">
+<p>
+  <strong>Name:</strong>
+  <%=h @cash_book.name %>
+</p>
+<p>
+  <strong>Owner:</strong>
+  <%=h @cash_book.owner.login %>
+</p>
+<p>
+  <%= link_to "Bearbeiten", edit_cash_book_path(@cash_book) %> |
+  <%= link_to "Löschen", @cash_book, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Alle anzeigen", cash_books_path %>
+</p>
+</div>
+<br />
+<hr />
+<br />
+<div class="subcolumns">
+
+<div class="c50l" id="entries_form">
+
+	<%= render :partial => 'entries/form' %>
+</div>
+
+<div class="c50r" id="last_entries_box">
+	<div class="subc" id="notice_entry">
+
+	</div>
+	<div class="subc" id="last_entries">
+	<%= render :partial => 'entries/last_entries', :collection => @last_entries %>	
+	</div>
+	
+</div>
+</div>

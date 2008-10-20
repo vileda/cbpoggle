@@ -1,0 +1,32 @@
+<% title "Entry" %>
+
+<p>
+  <strong>Date:</strong>
+  <%=h @entry.date %>
+</p>
+<p>
+  <strong>Purpose:</strong>
+  <%=h @entry.purpose %>
+</p>
+<p>
+  <strong>Revenue:</strong>
+  <%=h @entry.revenue %>
+</p>
+<p>
+  <strong>Expenditure:</strong>
+  <%=h @entry.expenditure %>
+</p>
+<p>
+  <strong>Cash Book:</strong>
+  <%=h @entry.cash_book_id %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%=h @entry.user_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_entry_path(@entry) %> |
+  <%= link_to "Destroy", @entry, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", entries_path %>
+</p>

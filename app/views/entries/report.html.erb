@@ -1,0 +1,27 @@
+
+<% content_for(:sub_menu) do %>
+	<%= link_to @current_cash_book.name, @current_cash_book %>
+<% end %>
+<%=google_pie_chart([["Einnahmen", @revenue_sum], ["Ausgaben", @expenditure_sum]], :width => 350, :height => 150) %>
+<table>
+  <tr>
+    <th>Datum</th>
+    <th>Zweck</th>
+    <th>Einnahme</th>
+    <th>Ausgabe</th>
+  </tr>
+<% if !@entries.blank? -%>
+<% title "Bericht für "+@date_from.to_s(:de_time)+" - "+@date_to.to_s(:de_time) %>
+  <% for entry in @entries %>
+    <tr>
+      <td><%= link_to entry.date.to_s(:de_time), entry %></td>
+      <td><%=h entry.purpose %></td>
+      <td><%=h number_to_euro(entry.revenue) %></td>
+      <td><%=h number_to_euro(entry.expenditure) %></td>
+    </tr>
+  <% end %>
+	<tr>
+		<td>Summe:</td><td></td><td><%= number_to_euro(@revenue_sum) %></td><td><%= number_to_euro(@expenditure_sum) %></td>
+	</tr>
+	<% end -%>
+</table>

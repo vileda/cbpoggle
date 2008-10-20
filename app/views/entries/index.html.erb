@@ -1,0 +1,29 @@
+<% title "Entries" %>
+
+<% content_for(:sub_menu) do %>
+	<%= link_to @current_cash_book.name, @current_cash_book %>
+<% end %>
+<%=google_pie_chart([["Einnahmen", @revenue_sum], ["Ausgaben", @expenditure_sum]], :width => 300, :height => 300) %>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Purpose</th>
+    <th>Revenue</th>
+    <th>Expenditure</th>
+  </tr>
+	<% if !@entries.blank? -%>
+  <% for entry in @entries %>
+    <tr>
+      <td><%=h entry.date %></td>
+      <td><%=h entry.purpose %></td>
+      <td><%=h number_to_euro(entry.revenue) %></td>
+      <td><%=h number_to_euro(entry.expenditure) %></td>
+      <td><%= link_to "Show", entry %></td>
+      <td><%= link_to "Edit", edit_entry_path(entry) %></td>
+      <td><%= link_to "Destroy", entry, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+		<td>Summe:</td><td></td><td><%= number_to_euro(@revenue_sum) %></td><td><%= number_to_euro(@expenditure_sum) %></td>
+	</tr>
+	<% end -%>
+</table>

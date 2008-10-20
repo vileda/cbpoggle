@@ -1,0 +1,6 @@
+page.replace_html :notice_entry, (content_tag :div, flash[:notice], :id => "flash_notice")
+page.show 'notice_entry'
+flash.discard
+page.insert_html :top, :last_entries, :partial => 'last_entries', :object => @entry
+page[:entry_form].reset
+page.visual_effect :fade, "notice_entry", :duration=>5

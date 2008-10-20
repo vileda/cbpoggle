@@ -1,0 +1,5 @@
+<% set_locale 'de' %>
+<% form_for :entries, :url => { :controller => 'entries', :action => 'report' } do |f| -%>
+	<%= f.date_select("filter", :start_year => 2007, :discard_day => true, :discard_month => false) %>
+	<%= f.submit "Anzeigen" %>
+<% end -%>

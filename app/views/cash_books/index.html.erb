@@ -1,0 +1,20 @@
+<% title "Kassenbücher" %>
+<% content_for(:sub_menu) do %>
+	Hier sehen Sie die Liste der Kassenbücher auf die Sie Zugriff haben
+<% end %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Besitzer</th>
+  </tr>
+  <% for cash_book in @cash_books %>
+    <tr>
+      <td><%= link_to cash_book.name, cash_book %></td>
+      <td><%=h cash_book.owner.login %></td>
+      <td><%= link_to "Bearbeiten", edit_cash_book_path(cash_book) %></td>
+      <td><%= link_to "Löschen", cash_book, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Neues Kassenbuch anlegen", new_cash_book_path %></p>
