@@ -6,10 +6,10 @@
 <%=google_pie_chart([["Einnahmen", @revenue_sum], ["Ausgaben", @expenditure_sum]], :width => 300, :height => 300) %>
 <table>
   <tr>
-    <th>Date</th>
-    <th>Purpose</th>
-    <th>Revenue</th>
-    <th>Expenditure</th>
+    <th>Datum</th>
+    <th>Zweck</th>
+    <th>Einnahme</th>
+    <th>Ausgabe</th>
   </tr>
 	<% if !@entries.blank? -%>
   <% for entry in @entries %>
