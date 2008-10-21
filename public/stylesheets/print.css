@@ -1,4 +1,5 @@
 @media print {
 	#userbar, #main_menu, #sub_menu { visibility: hidden; }
 	#piechart { visibility: hidden; }
+	a { text-decoration: none; color: #000; }
 }
