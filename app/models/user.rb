@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
 
   has_many :user_rights
   has_many :cash_books, :through => :user_rights
+  has_many :entries
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   #
