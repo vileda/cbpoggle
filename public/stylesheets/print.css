@@ -1,3 +1,4 @@
 @media print {
 	#userbar, #main_menu, #sub_menu { visibility: hidden; }
+	#piechart { visibility: hidden; }
 }

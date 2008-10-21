@@ -2,7 +2,10 @@
 <% content_for(:sub_menu) do %>
 	<%= link_to @current_cash_book.name, @current_cash_book %>
 <% end %>
-<%=google_pie_chart([["Einnahmen", @revenue_sum], ["Ausgaben", @expenditure_sum]], :width => 350, :height => 150) %>
+<div id="piechart">
+	<%=google_pie_chart([["Einnahmen", @revenue_sum], ["Ausgaben", @expenditure_sum]], :width => 350, :height => 150) %>
+</div>
+
 <table>
   <tr>
     <th>Datum</th>
