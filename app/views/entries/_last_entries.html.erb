@@ -1,6 +1,6 @@
 <div class="entry">
 	<b>Nr.: </b><%= last_entries.id %><br />
-	<b>Datum: </b><%= link_to entry.date.to_s(:de_time), entry %><br />
+	<b>Datum: </b><%= link_to last_entries.date.to_s(:de_time), entry %><br />
 	<b>Zweck: </b><%= last_entries.purpose %><br/>
 	<b>Einnahme: </b><%= number_to_euro(last_entries.revenue) %> <b>Ausgabe: </b><%= number_to_euro(last_entries.expenditure) %> <br />
 </div>
