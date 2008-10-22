@@ -33760,3 +33760,326 @@ ActionController::RoutingError (No route matches "/Fiddler\\'s\\%20Green\\%20-\\
     script/server:3
 
 Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing CashBooksController#index (for 127.0.0.1 at 2008-10-22 16:16:00) [GET]
+  Session ID: 8f1c3a7dc7e81b513b3ee9bae13c5df3
+  Parameters: {"action"=>"index", "controller"=>"cash_books"}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0.00762 (131 reqs/sec) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-10-22 16:16:00) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvIgYvIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVy
+OjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5767679777ba1a1ca8459b0038fe4f48f7f77b09
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered users/_user_bar (0.00017)
+Completed in 0.01187 (84 reqs/sec) | Rendering: 0.00590 (49%) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-10-22 16:16:06) [POST]
+  Session ID: BAh7CDoOcmV0dXJuX3RvIgYvOgxjc3JmX2lkIiU4NTQyNjgwNDAwZWEwODMy
+MGJkMDBmNjczNzgzM2Q2MyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--2dc05a5adcb1e7682c0b4a849021ad62e6767fd3
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"9611cb464626fbe64b4561eadb986abd3bd70eaf", "action"=>"create", "controller"=>"sessions", "password"=>"Kab3lbruch", "login"=>"vileda"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;36;1mUser Load (0.000436)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'vileda') LIMIT 1[0m
+Cookie set: auth_token=; path=/
+Redirected to http://localhost:3000/
+Completed in 0.26683 (3 reqs/sec) | DB: 0.00044 (0%) | 302 Found [http://localhost/session]
+
+
+Processing CashBooksController#index (for 127.0.0.1 at 2008-10-22 16:16:06) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiU4NTQyNjgw
+NDAwZWEwODMyMGJkMDBmNjczNzgzM2Q2MyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiG0xvZ2dlZCBp
+biBzdWNjZXNzZnVsbHkGOgpAdXNlZHsGOwlG--fd6f242aa60549b2177d362479181ec95232749e
+  Parameters: {"action"=>"index", "controller"=>"cash_books"}
+  [4;35;1mUser Load (0.000228)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCashBook Load (0.000222)[0m   [0;1mSELECT * FROM "cash_books" WHERE ("cash_books"."owner_id" = 1) [0m
+  [4;35;1mCashBook Load (0.000164)[0m   [0mSELECT "cash_books".* FROM "cash_books" INNER JOIN user_rights ON cash_books.id = user_rights.cash_book_id WHERE (("user_rights".user_id = 1)) [0m
+Rendering template within layouts/application
+Rendering cash_books/index
+  [4;36;1mUser Load (0.000267)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered users/_user_bar (0.00012)
+Completed in 0.03493 (28 reqs/sec) | Rendering: 0.00461 (13%) | DB: 0.00088 (2%) | 200 OK [http://localhost/]
+
+
+Processing CashBooksController#show (for 127.0.0.1 at 2008-10-22 16:16:08) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiU4NTQyNjgw
+NDAwZWEwODMyMGJkMDBmNjczNzgzM2Q2MyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiG0xvZ2dlZCBp
+biBzdWNjZXNzZnVsbHkGOgpAdXNlZHsGOwlU--f1e0ca92f412344a02b942499f967b6b9b786916
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"cash_books"}
+  [4;35;1mUser Load (0.000235)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCashBook Load (0.000229)[0m   [0;1mSELECT * FROM "cash_books" WHERE ("cash_books"."id" = 1) [0m
+  [4;35;1mUser Exists (0.000187)[0m   [0mSELECT "users".id FROM "users" INNER JOIN user_rights ON users.id = user_rights.user_id WHERE ("users"."id" = 1) AND (("user_rights".cash_book_id = 1)) LIMIT 1[0m
+  [4;36;1mUser Load (0.000230)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCashBook Load (0.000196)[0m   [0mSELECT * FROM "cash_books" WHERE ("cash_books"."id" = 1) [0m
+  [4;36;1mEntry Load (0.000147)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."cash_book_id" = 1) ORDER BY id desc LIMIT 5[0m
+Rendering template within layouts/application
+Rendering cash_books/show
+Rendered cash_books/_month_bar (0.19952)
+  [4;35;1mUser Load (0.000315)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered entries/_form (0.00631)
+Rendered users/_user_bar (0.00014)
+Completed in 0.24819 (4 reqs/sec) | Rendering: 0.21253 (85%) | DB: 0.00154 (0%) | 200 OK [http://localhost/cash_books/1]
+
+
+Processing EntriesController#create (for 127.0.0.1 at 2008-10-22 16:16:13) [POST]
+  Session ID: BAh7CjoMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiU4NTQyNjgw
+NDAwZWEwODMyMGJkMDBmNjczNzgzM2Q2MyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRY2FzaF9i
+b29rX2lkIgYx--21af0cfa6b3d848e4ccee2526f008eea7f91573f
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"9611cb464626fbe64b4561eadb986abd3bd70eaf", "action"=>"create", "controller"=>"entries", "entry"=>{"date(1i)"=>"2008", "purpose"=>"dddfs", "date(2i)"=>"10", "date(3i)"=>"22", "expenditure"=>"0.0", "revenue"=>"12"}}
+  [4;36;1mUser Load (0.000242)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mEntry Create (0.000508)[0m   [0mINSERT INTO "entries" ("purpose", "updated_at", "date", "user_id", "expenditure", "cash_book_id", "revenue", "created_at") VALUES('dddfs', '2008-10-22 14:16:13', '2008-10-22', 1, 0.0, 1, 12.0, '2008-10-22 14:16:13')[0m
+Rendering entries/create
+
+
+ActionView::TemplateError (undefined local variable or method `entry' for #<ActionView::Base:0x2244058>) on line #3 of entries/_last_entries.html.erb:
+1: <div class="entry">
+2: 	<b>Nr.: </b><%= last_entries.id %><br />
+3: 	<b>Datum: </b><%= link_to last_entries.date.to_s(:de_time), entry %><br />
+4: 	<b>Zweck: </b><%= last_entries.purpose %><br/>
+5: 	<b>Einnahme: </b><%= number_to_euro(last_entries.revenue) %> <b>Ausgabe: </b><%= number_to_euro(last_entries.expenditure) %> <br />
+6: </div>
+    app/views/entries/_last_entries.html.erb:3:in `_run_erb_47app47views47entries47_last_entries46html46erb'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:342:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:342:in `execute'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/partial_template.rb:20:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/partial_template.rb:19:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/template.rb:22:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/partials.rb:110:in `render_partial'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:277:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/helpers/prototype_helper.rb:987:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/helpers/prototype_helper.rb:747:in `insert_html'
+    app/views/entries/create.rjs:4:in `__instance_exec0'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/core_ext/object/extending.rb:53:in `send'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/core_ext/object/extending.rb:53:in `instance_exec'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/helpers/prototype_helper.rb:581:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/helpers/prototype_helper.rb:1023:in `new'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/helpers/prototype_helper.rb:1023:in `update_page'
+    app/views/entries/create.rjs:0:in `_run_rjs_47app47views47entries47create46rjs'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:342:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:342:in `execute'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/template.rb:35:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/template.rb:22:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:248:in `render_file_without_gettext'
+    /Library/Ruby/Gems/1.8/gems/gettext-1.93.0/lib/gettext/rails.rb:289:in `render_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1112:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:869:in `render_with_no_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:884:in `render_with_no_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/layout.rb:259:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/mime_responds.rb:131:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/mime_responds.rb:131:in `custom'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/mime_responds.rb:160:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/mime_responds.rb:160:in `respond'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/mime_responds.rb:154:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/mime_responds.rb:154:in `respond'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/entries_controller.rb:44:in `create'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1166:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1166:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:579:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/rescue.rb:201:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/session_management.rb:130:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:389:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.1/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.1/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing CashBooksController#show (for 127.0.0.1 at 2008-10-22 16:16:18) [GET]
+  Session ID: BAh7CjoMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiU4NTQyNjgw
+NDAwZWEwODMyMGJkMDBmNjczNzgzM2Q2MyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiJVBvc3RlbiBl
+cmZvbGdyZWljaCBoaW56dWdlZsO8Z3QuBjoKQHVzZWR7BjsJVDoRY2FzaF9i
+b29rX2lkIgYx--27c29189d79f9aa49697c5304cd6a595fd5feffe
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"cash_books"}
+  [4;36;1mUser Load (0.000244)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCashBook Load (0.000445)[0m   [0mSELECT * FROM "cash_books" WHERE ("cash_books"."id" = 1) [0m
+  [4;36;1mUser Exists (0.000202)[0m   [0;1mSELECT "users".id FROM "users" INNER JOIN user_rights ON users.id = user_rights.user_id WHERE ("users"."id" = 1) AND (("user_rights".cash_book_id = 1)) LIMIT 1[0m
+  [4;35;1mUser Load (0.000231)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCashBook Load (0.000168)[0m   [0;1mSELECT * FROM "cash_books" WHERE ("cash_books"."id" = 1) [0m
+  [4;35;1mEntry Load (0.000277)[0m   [0mSELECT * FROM "entries" WHERE ("entries"."cash_book_id" = 1) ORDER BY id desc LIMIT 5[0m
+Rendering template within layouts/application
+Rendering cash_books/show
+Rendered cash_books/_month_bar (0.07003)
+  [4;36;1mUser Load (0.000316)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered entries/_form (0.00422)
+
+
+ActionView::TemplateError (undefined local variable or method `entry' for #<ActionView::Base:0x20dfd48>) on line #3 of entries/_last_entries.html.erb:
+1: <div class="entry">
+2: 	<b>Nr.: </b><%= last_entries.id %><br />
+3: 	<b>Datum: </b><%= link_to last_entries.date.to_s(:de_time), entry %><br />
+4: 	<b>Zweck: </b><%= last_entries.purpose %><br/>
+5: 	<b>Einnahme: </b><%= number_to_euro(last_entries.revenue) %> <b>Ausgabe: </b><%= number_to_euro(last_entries.expenditure) %> <br />
+6: </div>
+    app/views/entries/_last_entries.html.erb:3:in `_run_erb_47app47views47entries47_last_entries46html46erb'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:342:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:342:in `execute'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/partial_template.rb:20:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/partial_template.rb:19:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/template.rb:22:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/partial_template.rb:27:in `render_member'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/partials.rb:142:in `render_partial_collection_with_known_partial_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/partials.rb:141:in `map'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/partials.rb:141:in `render_partial_collection_with_known_partial_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/partials.rb:135:in `render_partial_collection'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:275:in `render'
+    app/views/cash_books/show.html.erb:44:in `_run_erb_47app47views47cash_books47show46html46erb'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:342:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:342:in `execute'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/template.rb:35:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/template.rb:22:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:248:in `render_file_without_gettext'
+    /Library/Ruby/Gems/1.8/gems/gettext-1.93.0/lib/gettext/rails.rb:289:in `render_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1112:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:845:in `render_with_no_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1161:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1167:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:579:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/rescue.rb:201:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/session_management.rb:130:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:389:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.1/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.1/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.1/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing CashBooksController#show (for 127.0.0.1 at 2008-10-22 16:16:36) [GET]
+  Session ID: BAh7CjoMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiU4NTQyNjgw
+NDAwZWEwODMyMGJkMDBmNjczNzgzM2Q2MyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoRY2FzaF9i
+b29rX2lkIgYx--21af0cfa6b3d848e4ccee2526f008eea7f91573f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"cash_books"}
+  [4;35;1mUser Load (0.000405)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCashBook Load (0.000340)[0m   [0;1mSELECT * FROM "cash_books" WHERE ("cash_books"."id" = 1) [0m
+  [4;35;1mUser Exists (0.000209)[0m   [0mSELECT "users".id FROM "users" INNER JOIN user_rights ON users.id = user_rights.user_id WHERE ("users"."id" = 1) AND (("user_rights".cash_book_id = 1)) LIMIT 1[0m
+  [4;36;1mUser Load (0.000230)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCashBook Load (0.000360)[0m   [0mSELECT * FROM "cash_books" WHERE ("cash_books"."id" = 1) [0m
+  [4;36;1mEntry Load (0.000319)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."cash_book_id" = 1) ORDER BY id desc LIMIT 5[0m
+Rendering template within layouts/application
+Rendering cash_books/show
+Rendered cash_books/_month_bar (0.00120)
+  [4;35;1mUser Load (0.000279)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered entries/_form (0.00376)
+Rendered entries/_last_entries (0.00048)
+Rendered users/_user_bar (0.00015)
+Completed in 0.07955 (12 reqs/sec) | Rendering: 0.00967 (12%) | DB: 0.00214 (2%) | 200 OK [http://localhost/cash_books/1]
