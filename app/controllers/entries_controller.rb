@@ -5,7 +5,7 @@ class EntriesController < ApplicationController
     @date_from = Date.new(params[:entries]["filter(1i)"].to_i,params[:entries]["filter(2i)"].to_i)
     @date_to = (@date_from+1.month)-1.day
     @current_cash_book = CashBook.find(session[:cash_book_id])
-    @entries = Entry.find_all_by_cash_book_id(session[:cash_book_id], :conditions => {:date => @date_from..@date_to})
+    @entries = Entry.find_all_by_cash_book_id(session[:cash_book_id], :conditions => {:date => @date_from..@date_to}, :order => ["date asc"])
     @revenue_sum = 0
     @expenditure_sum = 0
     @entries.each do |e|
