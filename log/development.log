@@ -34424,3 +34424,30 @@ Rendering template within layouts/application
 Rendering sessions/new
 Rendered users/_user_bar (1.1ms)
 Completed in 16ms (View: 15, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing CashBooksController#index (for 127.0.0.1 at 2009-05-04 04:32:40) [GET]
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-05-04 04:32:40) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered users/_user_bar (1.3ms)
+Completed in 16ms (View: 15, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-05-04 04:32:43) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_user_bar (0.2ms)
+Completed in 24ms (View: 7, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-05-04 04:32:58) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_user_bar (0.2ms)
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/signup]
