@@ -34253,3 +34253,174 @@ Rendering template within layouts/application
 Rendering entries/report
 Rendered users/_user_bar (0.00134)
 Completed in 0.03833 (26 reqs/sec) | Rendering: 0.00588 (15%) | DB: 0.00123 (3%) | 200 OK [http://localhost/entries/report]
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-04 04:27:12) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  app/controllers/cash_books_controller.rb:1
+
+Rendered rescues/_trace (26.7ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-04 04:27:39) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  app/controllers/cash_books_controller.rb:1
+
+Rendered rescues/_trace (26.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-04 04:27:40) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  app/controllers/cash_books_controller.rb:1
+
+Rendered rescues/_trace (83.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-04 04:27:47) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  app/controllers/cash_books_controller.rb:1
+
+Rendered rescues/_trace (27.1ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-04 04:27:49) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  app/controllers/cash_books_controller.rb:1
+
+Rendered rescues/_trace (27.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-04 04:28:56) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  app/controllers/cash_books_controller.rb:1
+
+Rendered rescues/_trace (26.7ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (16.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "cash_books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "owner_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE TABLE "cash_books_user_rights" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cash_book_id" integer, "user_right_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "purpose" varchar(255), "revenue" decimal(8,2) DEFAULT 0.0, "expenditure" decimal(8,2) DEFAULT 0.0, "cash_book_id" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "user_rights" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "right" integer, "cash_book_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime) [0m
+  [4;35;1mSQL (2.7ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080903225123')[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080708221100')[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080708223731')[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080708224443')[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080903201259')[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080903224556')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mCREATE TABLE "cash_books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "owner_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "cash_books_user_rights" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cash_book_id" integer, "user_right_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "purpose" varchar(255), "revenue" decimal(8,2) DEFAULT 0.0, "expenditure" decimal(8,2) DEFAULT 0.0, "cash_book_id" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "user_rights" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "right" integer, "cash_book_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime) [0m
+  [4;35;1mSQL (2.8ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080903225123')[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080708221100')[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080708223731')[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080708224443')[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080903201259')[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080903224556')[0m
+
+
+Processing CashBooksController#index (for 127.0.0.1 at 2009-05-04 04:31:19) [GET]
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 27ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-05-04 04:31:19) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered users/_user_bar (1.1ms)
+Completed in 16ms (View: 15, DB: 0) | 200 OK [http://localhost/session/new]
