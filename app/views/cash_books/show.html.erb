@@ -3,27 +3,30 @@
 	Hier können Sie neue Posten hinzufügen und einen Bericht erstellen
 <% end %>
 <br />
-<div class="subc" id="monthbar">
-	Bericht für: <%= render :partial => 'month_bar' %>
-	<%= link_to "Alle Einträge anzeigen", entries_path %>
-</div>
+<hr/ >
 <br />
-<hr />
+<p>
+	<b>Folgende Aktionen beziehen sich aus das GESAMTE Kassenbuch:</b>
+	<br />
+  <%= link_to "Kassenbuch bearbeiten", edit_cash_book_path(@cash_book) %> |
+  <%= link_to "Kassenbuch löschen", @cash_book, :confirm => 'Sind Sie sicher das Sie das GESAMTE Kassenbuch löschen wollen?', :method => :delete %>
+</p>
 <br />
+<hr/ >
 <div class="subc">
 <p>
   <strong>Name:</strong>
   <%=h @cash_book.name %>
 </p>
 <p>
-  <strong>Owner:</strong>
+  <strong>Besitzer:</strong>
   <%=h @cash_book.owner.login %>
 </p>
-<p>
-  <%= link_to "Bearbeiten", edit_cash_book_path(@cash_book) %> |
-  <%= link_to "Löschen", @cash_book, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "Alle anzeigen", cash_books_path %>
-</p>
+</div>
+<hr/ >
+<div class="subc" id="monthbar">
+	Bericht für: <%= render :partial => 'month_bar' %>
+	<%= link_to "Alle Einträge anzeigen", entries_path %>
 </div>
 <br />
 <hr />
