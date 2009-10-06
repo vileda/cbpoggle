@@ -50,7 +50,9 @@ body {
   clear: both;
 }
 
-
+.align-right {
+	text-align: right;
+}
 
 .fieldWithErrors {
   display: inline;

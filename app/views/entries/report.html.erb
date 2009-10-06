@@ -1,11 +1,6 @@
-
 <% content_for(:sub_menu) do %>
 	<%= link_to @current_cash_book.name, @current_cash_book %>
 <% end %>
-<div id="piechart">
-	<%=google_pie_chart([["Einnahmen", @revenue_sum], ["Ausgaben", @expenditure_sum]], :width => 350, :height => 150) %>
-</div>
-
 <table>
   <tr>
     <th>Datum</th>
@@ -19,8 +14,8 @@
     <tr>
       <td><%= link_to entry.date.to_s(:de_time), entry %></td>
       <td><%=h entry.purpose %></td>
-      <td><%=h number_to_euro(entry.revenue) %></td>
-      <td><%=h number_to_euro(entry.expenditure) %></td>
+      <td class="align-right"><%=h number_to_euro(entry.revenue) %></td>
+      <td class="align-right"><%=h number_to_euro(entry.expenditure) %></td>
     </tr>
   <% end %>
 	<tr>
